@@ -1,0 +1,181 @@
+<?php   
+session_start();
+include_once '../../modelo/sisacse_model.php';
+$sisacse = new sisacse_model();
+if(isset($_SESSION['key'])){
+    $key = $_SESSION['key'];
+}else{
+    header('Location:../Login/');
+}
+
+                
+     
+ ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Sistema de Interoperabilidad de Servicios</title>
+  <!-- Bootstrap core CSS-->
+  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+  <!-- Custom fonts for this template-->
+  <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="../../css/sb-admin.css" rel="stylesheet">
+
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+
+<?php   
+
+      $grupo=$sisacse->RolesUsuario($key);
+
+      $datos = $sisacse->DatosUsuario($key);
+
+      $informacion = $datos['Nombre']." ".$datos['Paterno']." ".$datos['Materno'];
+
+ ?>
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html"><img src="../../img/muni.png" alt=""></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+      <?php   if($grupo==""){
+
+        } ?>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#poderjudicial" data-parent="#exampleAccordion">
+             <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">PODER JUDICIAL</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="poderjudicial">
+            <li>
+              <a href="../PODERJUDICIAL/antecedentespenales.php">Consultar antecedentes penales</a>
+            </li>
+            
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+       <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#inpe" data-parent="#exampleAccordion">
+             <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">INPE</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="inpe">
+            <li>
+              <a href="../INPE/antecedentesjudiciales.php">Consultar antecedentes judiciales</a>
+            </li>
+           
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#sunarp" data-parent="#exampleAccordion">
+             <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">SUNARP</span>
+          </a>
+           <ul class="sidenav-second-level collapse" id="sunarp">
+            <li>
+              <a href="../SUNARP/Titularidad.php">Consultar titularidad</a>
+            </li>
+            <li>
+              <a href="../SUNARP/verdetallerpv.php">Consultar RPV</a>
+            </li>
+            <li>
+              <a href="../SUNARP/buscarnaveaeronave.php">Consultar Nave, Aeronave</a>
+            </li>
+
+            <li>
+              <a href="../SUNARP/listarasientos.php">Consultar asientos</a>
+            </li>
+            <li>
+              <a href="../SUNARP/verasiento.php">Ver asiento</a>
+            </li>
+            
+            <li>
+              <a href="../SUNARP/buscarporrazonsocial.php">Consultar por Razon Social</a>
+            </li>
+             <li>
+              <a href="../SUNARP/listadoOficinas.php">Listado de oficinas</a>
+            </li>
+            
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#migraciones" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">MIGRACIONES</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="migraciones">
+            <li>
+              <a href="../MIGRACIONES/consultardocumento.php">Consulta de carnet de extranjería</a>
+            </li>
+           
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#MEF" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-file"></i>
+            <span class="nav-link-text">MEF</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="MEF">
+            <li>
+              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2" >PIP</a>
+              <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                <li>
+                  <a href="../MEF/obtenerpip.php">Obtener PIP</a>
+                </li>
+                <li>
+                  <a href="#">Obtener PIP por año de registro</a>
+                </li>
+                <li>
+                  <a href="../MEF/obtenerpiplocalizacion.php">Obtener PIP por localizacion</a>
+                </li>
+                <li>
+                  <a href="#">Obtener PIP por localizacion y año de registro</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="../MEF/fuentesano.php">Fuentes por año</a>
+            </li>
+            <li>
+              <a href="../MEF/proyectosano.php">Proyectos por año</a>
+            </li>
+            <li>
+              <a href="../MEF/rubrosano.php">Rubros por año</a>
+            </li>
+          </ul>
+        </li>
+        
+        
+      </ul>
+
+
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+       
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i><?php   echo $informacion ?></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
