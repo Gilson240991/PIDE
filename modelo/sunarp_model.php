@@ -102,9 +102,9 @@ Class sunarp_model{
 			$datos['modelo'] = $result->respuestaNaveAeronave->modelo;
 			$datos['tomoFolio'] = $result->respuestaNaveAeronave->tomoFolio;
 			$datos['cantidadfolio'] =count($result->respuestaNaveAeronave->tomoFolio->tomoFolio);
-		}catch (SoapFault $fault) {
+		    }catch (SoapFault $fault) {
    				$datos['error']="Tiempo de petición fallido";
-				}
+			}
 			return $datos;
 	}
 
