@@ -28,7 +28,6 @@ class coneccionBD {
 		return self::$_instance;
 	}
 
-
 	public function conectar() {
 		return $this->_connection;
 	}
