@@ -50,8 +50,14 @@ display: none;
           <div class="col-sm-1">
           <label for="" class="col-form-label">Registro</label>
         </div>
-        <div class="col-sm-2">
-          <input type="text" id='registro' class="form-control" onKeyPress="return soloNum(event)">
+        <div class="col-sm-3">
+        <select name="registro" id="registro" class="form-control">
+          <option value="">-Seleccionar-</option>
+          <option value="21000">Registro de propiedad inmueble</option>
+          <option value="22000">Registro de personas jurídicas</option>
+          <option value="23000">Registro de personas naturales</option>
+        </select>
+          
         </div>
 
         <div class="col-sm-2">

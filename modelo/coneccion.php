@@ -11,13 +11,7 @@ class coneccionBD {
 
 	public function __construct() {
 
-		$this->_connection = new mysqli($this->_host, $this->_username, $this->_password, $this->_database);
-		mysqli_set_charset($this->_connection, "utf8");
-
-		// Error handling
-		if (mysqli_connect_error()) {
-			trigger_error("Failed to conencto to MySQL: " . mysqli_connect_error(), E_USER_ERROR);
-		}
+		$this->_connection=new PDO("mysql:host=$this->_host;dbname=$this->_database;charset=utf8","$this->_username","$this->_password");
 
 	}
 	public static function getInstance() {

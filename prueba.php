@@ -1,10 +1,15 @@
 <?php
-include_once 'modelo/sunarp_model.php';
-$o = new sunarp_model();
+include_once 'modelo/pide_model.php';
+$o = new pide_model();
+$datos['usuario']='algo';
+$datos['pass']='asdadafa';
 
+$key ="ASdasfasfa";
+
+print_r($o->validar_usuario(891));
+if($o->validar_usuario(891)){
+	echo "se pudo xD";
+}else{
+		echo "nada";
+}
 ?>
-
-<pre><?php // print_r($datos) ?></pre>
-
-<?php echo '<a target="_blank"><img src="data:image/jpeg;base64,'.base64_encode( $o->verasiento('27040','63502948','ASIENTO','24','24','1')).'"/> Ver</a>';
- ?>

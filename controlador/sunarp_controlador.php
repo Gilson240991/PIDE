@@ -34,7 +34,7 @@ switch ($funcion) {
 	$razon = (isset($_POST['razon']))?$_POST['razon']:"";
 
 
-	$datos['row'] = $sunarp->titularidad($tipo,$paterno,$materno,$nombres,$razon);
+	$datos['row'] = $sunarp->titularidad($tipo,strtoupper($paterno),strtoupper($materno),strtoupper($nombres),$razon);
 	$datos['cantidad'] =count($datos['row'][0]);
 		echo json_encode($datos);
 
@@ -43,7 +43,7 @@ switch ($funcion) {
 	case 'listarPorRazonSocial':
 	$razon =    (isset($_POST['razon']))?$_POST['razon']:"";
 
-	$datos['row'] = $sunarp->buscarPJRazonSocialx($razon);
+	$datos['row'] = $sunarp->buscarPJRazonSocialx(strtoupper($razon));
 	echo json_encode($datos);
 	break;
 

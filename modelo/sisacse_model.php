@@ -16,11 +16,14 @@ Class sisacse_model{
 			$client = new SoapClient($servicio);
 			$codigo['codigo']=$key;
 			$result = $client->DatosUsuario($codigo);
-				
+			
+			$datos['id']=$result->DatosUsuarioResult->USUCOD;	
 			$datos['Nombre']=$result->DatosUsuarioResult->USUNOM;
 			$datos['Paterno']=$result->DatosUsuarioResult->USUAPEPAT;
 			$datos['Materno']=$result->DatosUsuarioResult->USUAPEMAT;
 			$datos['Dni']=$result->DatosUsuarioResult->USUDNI;
+
+
 			return $datos;
 	}
 

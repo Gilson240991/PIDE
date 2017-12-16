@@ -39,6 +39,8 @@
     <!-- Custom scripts for all pages-->
     <script src="../../js/sb-admin.min.js"></script>
     <script src="../../js/mef.js"></script>
+    <script src="../../js/jquery-ui.js"></script>
+
 
 
     <!-- Custom scripts for this page-->
@@ -59,6 +61,14 @@
     });
 
     </script>
+    <script>
+  $(document).on('ready',function () {
+        $("#tabs").tabs({
+         //disabled: [1, 2, 3]
+        }
+        );
+        });
+</script>
     <script>
     function soloNum(e) {
       var key = window.Event ? e.which : e.keyCode
