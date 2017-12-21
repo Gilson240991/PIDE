@@ -578,6 +578,7 @@ $('#asientos-master tbody').append("<tr>"+
 				}
 
 				if(value.cantidadasientos>1){
+					$('#btn_descargas').append('<button type="button" class="btn btn-primary" onclick="descargar_all_asientos('+value.cantidadasientos+')">Descargar todos los Asientos</button>');
 					$('#asientos-tabla').append("<table class='table table-bordered table-condensed table-hover table-sm' id='asientos'>"+
 						"<thead><tr><th>Lista de asientos</th><th>Imagen</th></tr></thead><tbody>");
 				  for(var i=1;i<=value.cantidadasientos;i++){
@@ -600,7 +601,7 @@ $('#asientos-master tbody').append("<tr>"+
 						for(var j =1;j<=value.cantidadpaginas[i-1];j++){
 
 						$('#asientos-tabla tbody').append("<tr data-tt-id='"+i+"."+j+".1' data-tt-parent-id='"+i+".4'>"+
-						"<td><b>Página de referencia : </b>"+value.listAsientos[i-1].listPag.nroPagRef+"</td><td><a href='verasiento.php?transaccion="+value.transaccion+"&idImg="+value.listAsientos[i-1].idImgAsiento+"&tipo="+value.listAsientos[i-1].tipo+"&totalpag="+value.nroTotalPag+"&refpag="+value.listAsientos[i-1].listPag.nroPagRef+"&pagina="+value.listAsientos[i-1].listPag.pagina+"' target='_blank'>VER ASIENTO</a></td></tr>"+
+						"<td><b>Página de referencia : </b>"+value.listAsientos[i-1].listPag.nroPagRef+"</td><td><a class='_asiento' href='verasiento.php?transaccion="+value.transaccion+"&idImg="+value.listAsientos[i-1].idImgAsiento+"&tipo="+value.listAsientos[i-1].tipo+"&totalpag="+value.nroTotalPag+"&refpag="+value.listAsientos[i-1].listPag.nroPagRef+"&pagina="+value.listAsientos[i-1].listPag.pagina+"' target='_blank'>VER ASIENTO</a></td></tr>"+
 						"<tr data-tt-id='"+i+"."+j+".2' data-tt-parent-id='"+i+".4'>"+
 						"<td><b>Página : </b>"+value.listAsientos[i-1].listPag.pagina+"</td><td></td></tr>");
 					}
@@ -610,7 +611,7 @@ $('#asientos-master tbody').append("<tr>"+
 					"<td><b>Página "+m+"</b></td><td></td></tr>");
 
 							$('#asientos-tabla tbody').append("<tr data-tt-id='"+i+"."+m+".4.1' data-tt-parent-id='"+i+"."+m+".4'>"+
-							"<td><b>Página de referencia : </b>"+value.listAsientos[i-1].listPag[m-1].nroPagRef+"</td><td><a href='verasiento.php?transaccion="+value.transaccion+"&idImg="+value.listAsientos[i-1].idImgAsiento+"&tipo="+value.listAsientos[i-1].tipo+"&totalpag="+value.nroTotalPag+"&refpag="+value.listAsientos[i-1].listPag[m-1].nroPagRef+"&pagina="+value.listAsientos[i-1].listPag[m-1].pagina+"' target='_blank'>VER ASIENTO</a></td></tr>"+
+							"<td><b>Página de referencia : </b>"+value.listAsientos[i-1].listPag[m-1].nroPagRef+"</td><td><a class='_asiento' href='verasiento.php?transaccion="+value.transaccion+"&idImg="+value.listAsientos[i-1].idImgAsiento+"&tipo="+value.listAsientos[i-1].tipo+"&totalpag="+value.nroTotalPag+"&refpag="+value.listAsientos[i-1].listPag[m-1].nroPagRef+"&pagina="+value.listAsientos[i-1].listPag[m-1].pagina+"' target='_blank'>VER ASIENTO</a></td></tr>"+
 							"<tr data-tt-id='"+i+"."+m+".4.2' data-tt-parent-id='"+i+"."+m+".4'>"+
 							"<td><b>Página : </b>"+value.listAsientos[i-1].listPag[m-1].pagina+"</td><td></td></tr>");
 					}
@@ -646,7 +647,7 @@ $('#asientos-master tbody').append("<tr>"+
 						for(var j =1;j<=value.cantidadpaginas;j++){
 
 						$('#asientos-tabla tbody').append("<tr data-tt-id='"+i+"."+j+".1' data-tt-parent-id='"+i+".4'>"+
-						"<td><b>Página de referencia : </b>"+value.listAsientos.listPag.nroPagRef+"</td><td><a href='verasiento.php?transaccion="+value.transaccion+"&idImg="+value.listAsientos.idImgAsiento+"&tipo="+value.listAsientos.tipo+"&totalpag="+value.nroTotalPag+"&refpag="+value.listAsientos.listPag.nroPagRef+"&pagina="+value.listAsientos.listPag.pagina+"' target='_blank'>VER ASIENTO</a></td></tr>"+
+						"<td><b>Página de referencia : </b>"+value.listAsientos.listPag.nroPagRef+"</td><td><a class='_asiento' href='verasiento.php?transaccion="+value.transaccion+"&idImg="+value.listAsientos.idImgAsiento+"&tipo="+value.listAsientos.tipo+"&totalpag="+value.nroTotalPag+"&refpag="+value.listAsientos.listPag.nroPagRef+"&pagina="+value.listAsientos.listPag.pagina+"' target='_blank'>VER ASIENTO</a></td></tr>"+
 						"<tr data-tt-id='"+i+"."+j+".2' data-tt-parent-id='"+i+".4'>"+
 						"<td><b>Página : </b>"+value.listAsientos.listPag.pagina+"</td></td></td></tr>");
 					}
@@ -656,7 +657,7 @@ $('#asientos-master tbody').append("<tr>"+
 					"<td><b>Página "+m+"</b></td></td></tr>");
 
 							$('#asientos-tabla tbody').append("<tr data-tt-id='"+i+"."+m+".4.1' data-tt-parent-id='"+i+"."+m+".4'>"+
-							"<td><b>Página de referencia : </b>"+value.listAsientos.listPag[m-1].nroPagRef+"</td><td><a href='verasiento.php?transaccion="+value.transaccion+"&idImg="+value.listAsientos.idImgAsiento+"&tipo="+value.listAsientos.tipo+"&totalpag="+value.nroTotalPag+"&refpag="+value.listAsientos.listPag[m-1].nroPagRef+"&pagina="+value.listAsientos.listPag[m-1].pagina+"' target='_blank'>VER ASIENTO</a></td></tr>"+
+							"<td><b>Página de referencia : </b>"+value.listAsientos.listPag[m-1].nroPagRef+"</td><td><a class='_asiento' href='verasiento.php?transaccion="+value.transaccion+"&idImg="+value.listAsientos.idImgAsiento+"&tipo="+value.listAsientos.tipo+"&totalpag="+value.nroTotalPag+"&refpag="+value.listAsientos.listPag[m-1].nroPagRef+"&pagina="+value.listAsientos.listPag[m-1].pagina+"' target='_blank'>VER ASIENTO</a></td></tr>"+
 							"<tr data-tt-id='"+i+"."+m+".4.2' data-tt-parent-id='"+i+"."+m+".4'>"+
 							"<td><b>Página : </b>"+value.listAsientos.listPag[m-1].pagina+"</td><td></td></tr>");
 					}
@@ -770,8 +771,13 @@ $('#asientos-master tbody').append("<tr>"+
 					"<td><b>Nº de página : </b>"+value.listFolios[i-1].nroPagRef+"</td><td></td></tr>"+
 					"<tr data-tt-id='"+i+".3' data-tt-parent-id='"+i+"'>"+
 					"<td><b>Tipo : </b>"+value.listFolios[i-1].tipo+"</td><td></td></tr>"+
-					"<tr data-tt-id='"+i+".4' data-tt-parent-id='"+i+"'>"+
-					"<td><b>Páginas</b> ("+value.cantidadfolioslista[i-1]+")</td><td></td></tr>");
+					"<tr data-tt-id='"+i+".4' data-tt-parent-id='"+i+"'>");
+					if(value.cantidadfolioslista[i-1]==0){
+					
+					}else{
+						$('#folios-tabla tbody').append("<td><b>Páginas</b> ("+value.cantidadfolioslista[i-1]+")</td><td></td></tr>");
+					}
+					
 
 					if(value.cantidadfolioslista[i-1]==1){
 						for(var j =1;j<=value.cantidadfolioslista[i-1];j++){
@@ -781,7 +787,7 @@ $('#asientos-master tbody').append("<tr>"+
 						"<tr data-tt-id='"+i+"."+j+".2' data-tt-parent-id='"+i+".4'>"+
 						"<td><b>Página : </b>"+value.listFolios[i-1].listPag.pagina+"</td><td></td></tr>");
 					}
-					}else{
+					}else if(value.cantidadfolioslista[i-1]>1){
 						for(var m =1;m<=value.cantidadfolioslista[i-1];m++){
 							$('#folios-tabla tbody').append("<tr data-tt-id='"+i+"."+m+".4' data-tt-parent-id='"+i+".4'>"+
 					"<td><b>Página "+m+"</b></td><td></td></tr>");
@@ -791,6 +797,13 @@ $('#asientos-master tbody').append("<tr>"+
 							"<tr data-tt-id='"+i+"."+m+".4.2' data-tt-parent-id='"+i+"."+m+".4'>"+
 							"<td><b>Página : </b>"+value.listFolios[i-1].listPag[m-1].pagina+"</td><td></td></tr>");
 					}
+					}else if(value.cantidadfolioslista[i-1]==0){
+						$('#folios-tabla tbody').append("<tr data-tt-id='"+i+".6' data-tt-parent-id='"+i+"''>"+
+					"<td><b>Página de referencia : </b>"+value.listFolios[i-1].nroPagRef+"</td><td><a href='verasiento.php?transaccion="+value.transaccion+"&idImg="+value.listFolios[i-1].idImgFolio+"&tipo="+value.listFolios[i-1].tipo+"&totalpag="+value.nroTotalPag+"&refpag="+value.listFolios[i-1].nroPagRef+"&pagina="+value.listFolios[i-1].pagina+"' target='_blank'>VER FOLIO</a></td></tr>");	
+						$('#folios-tabla tbody').append("<tr data-tt-id='"+i+".5' data-tt-parent-id='"+i+"'>"+
+					"<td><b>Página : </b>"+value.listFolios[i-1].pagina+"</td><td></td></tr>");
+
+					
 					}
 					
 					
@@ -993,3 +1006,6 @@ $.each(value.propietarios,function(m,n){
 
 }
 
+function descargar_all_asientos($cantidad){
+	alert($("._asiento").attr('href'));
+}

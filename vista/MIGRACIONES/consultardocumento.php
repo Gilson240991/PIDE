@@ -13,7 +13,6 @@ display: none;
 			</li>
 			<li class="breadcrumb-item active">Consultar Carnet de Extranjería</li>
 		</ol>
-		<h1>Consultar Carnet de Extranjería</h1>
 		<hr>
 		<div>
 			<form action="" class="form-horizontal">

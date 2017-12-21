@@ -37,9 +37,9 @@
 									<input type="password" id='pass' placeholder="password" name="pw" class="form-control" />
 								</div>
 								<button class="btn btn-primary" onclick="validarAccesoSisacse()"> INGRESAR </button>
-								<div class="text-center">
+								<!--div class="text-center">
 									<a href="#"> <p>¿Has olvidado tu contraseña? </p></a>
-								</div>
+								</div-->
 								
 							</div>
 						</div>

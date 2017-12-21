@@ -36,7 +36,7 @@
 				</div>
 			</div>
 		</form>
-		<div class="form-group row">
+		<div class="form-group row" style='margin-top: 10px'>
 			<div class="col-sm-12">
 				<div id="t">
 					

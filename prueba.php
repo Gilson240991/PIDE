@@ -1,15 +1,7 @@
-<?php
-include_once 'modelo/pide_model.php';
-$o = new pide_model();
-$datos['usuario']='algo';
-$datos['pass']='asdadafa';
+<?php 	
+include 'modelo/sunarp_model.php';
 
-$key ="ASdasfasfa";
-
-print_r($o->validar_usuario(891));
-if($o->validar_usuario(891)){
-	echo "se pudo xD";
-}else{
-		echo "nada";
-}
+$sunarp = new sunarp_model();
 ?>
+
+<?php echo '<img  style ="width:100%;" src="data:image/jpeg;base64,'.base64_encode( $sunarp->verasiento('27040','8058883','FOLIO','24','2','1')).'"/>';

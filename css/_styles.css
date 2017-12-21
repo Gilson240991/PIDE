@@ -71,24 +71,23 @@ input,td{
 }
 .cabecera{
 
-    border-left: 6px solid #222D32;
+    border-left: 6px solid lightgray;
     padding: 5px;
+    margin-bottom: 25px;
+    background-color: #003883;
+    color: white;
 
 }
-.well{
-    padding-right: 20px;
-        padding-left: 20px;
 
-    padding-top: 20px;
-
-}
 .form-group{
-    margin-top: -18px;
+    margin-top: -15px;
 }
-.col-sm-4 {
-    background-color: #222D32;
-    color: #868e96;
+
+.well{
+    padding: 10px;
 }
-.resultados{
-    background-color: #f9f9f9; 
-}
+
+.uj_margin{margin-top:-25px !important;margin-bottom:12px !important}
+.uj_well{padding: 15px;background-color: #f1f1f1;box-shadow: 1px 2px 2px 1px #ccc !important; margin-bottom: 10px;}
+
+.row-card{padding-top: 22px;padding-left: 8px;}

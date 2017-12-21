@@ -60,7 +60,7 @@ display: none;
           
         </div>
 
-        <div class="col-sm-2">
+        <div class="col-sm-1">
           <button class="btn btn-primary" type='button' onclick="listarAsientos();"><i class="fa fa-search"></i> Buscar</button>
         </div>
         <div class="col-sm-1">
@@ -71,7 +71,7 @@ display: none;
       </div>
     
     </form>
-    <div class="form-group row">
+    <div class="form-group row" style='margin-top: 10px'>
       <div class="col-sm-12">
         <div id="asientos-master">
         </div>
@@ -89,6 +89,9 @@ display: none;
         
       </div>
       <div class="modal-body container">
+        <div id="btn_descargas">
+          
+        </div>
         <div id="asientos-tabla">
         </div>
         

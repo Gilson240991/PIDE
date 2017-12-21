@@ -32,14 +32,14 @@
 
          
     <script src="../../vendor/jquery/jquery.min.js"></script>
-
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="../../js/sb-admin.min.js"></script>
     <script src="../../js/mef.js"></script>
-    <script src="../../js/jquery-ui.js"></script>
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 
 
@@ -62,13 +62,10 @@
 
     </script>
     <script>
-  $(document).on('ready',function () {
-        $("#tabs").tabs({
-         //disabled: [1, 2, 3]
-        }
-        );
-        });
-</script>
+  $(document).on('ready',function() {
+    $( "#tabs" ).tabs();
+  });
+  </script>
     <script>
     function soloNum(e) {
       var key = window.Event ? e.which : e.keyCode
@@ -86,6 +83,9 @@
     return (((tecla > 96 && tecla < 123) || (tecla > 64 && tecla < 91)) || tecla == 8);
     }
     </script>
+
+  
+
     
   </div>
 </body>

@@ -6,9 +6,7 @@ if(isset($_SESSION['key'])){
     $key = $_SESSION['key'];
 }else{
     header('Location:../Login/');
-}
-
-                
+}            
      
  ?>
 <!DOCTYPE html>
@@ -23,16 +21,12 @@ if(isset($_SESSION['key'])){
   <title>Sistema de Interoperabilidad de Servicios</title>
   <!-- Bootstrap core CSS-->
   <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
-
-
   <!-- Custom fonts for this template-->
   <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="../../css/sb-admin.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../../css/_styles.css" media="screen">
-  
+
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
