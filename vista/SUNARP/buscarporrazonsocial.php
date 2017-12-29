@@ -12,13 +12,22 @@
 </style>
 <div class="content-wrapper">
 	<div class="container-fluid">
-		<!-- Breadcrumbs-->
-		<ol class="breadcrumb">
+		<!-- <Breadcrumbs-->
+		<div class="row">
+			<div class="col-sm-8">
+				<ol class="breadcrumb">
 			<li class="breadcrumb-item">
 				<a href="#"><b>SUNARP</b></a>
 			</li>
 			<li class="breadcrumb-item active"><b>CONSULTAR POR RAZÓN SOCIAL</b></li>
 		</ol>
+			</div>
+			<div class="col-sm-4">
+				<?php include 'horario_atencion.php' ?>
+			</div>
+		</div>
+			
+		
 		<hr>
 		<form action="">
 			<div class="form-group row" style="margin-top: 10px;">

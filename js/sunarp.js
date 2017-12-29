@@ -286,6 +286,19 @@ $.each(resp.row[0], function(i, value) {
    		}else{
    			var placa="--------";
    		}
+
+   		if(value.tipoDocumento!=undefined){
+   		var tipoDocumento = value.tipoDocumento;
+   		}else{
+   			var tipoDocumento="--------";
+   		}
+
+   		if(value.numeroDocumento!=undefined){
+   		var numeroDocumento = value.numeroDocumento;
+   		}else{
+   			var numeroDocumento="--------";
+   		}
+
 $('#titularidad tbody').append("<tr>"+
 					"<th class='text-center scope'>"+cont+"</th>"+
 					"<td class='text-center' >"+value.registro+"</td>"+
@@ -293,8 +306,8 @@ $('#titularidad tbody').append("<tr>"+
 					"<td class='text-center' >"+value.apPaterno+"</td>"+
 					"<td class='text-center' >"+value.apMaterno+"</td>"+
 					"<td class='text-center' >"+value.nombre+"</td>"+
-					"<td class='text-center' >"+value.tipoDocumento+"</td>"+
-					"<td class='text-center' >"+value.numeroDocumento+"</td>"+
+					"<td class='text-center' >"+tipoDocumento+"</td>"+
+					"<td class='text-center' >"+numeroDocumento+"</td>"+
 					"<td class='text-center' >"+value.numeroPartida+"</td>"+
 					"<td class='text-center' >"+placa+"</td>"+
 					"<td class='text-center' >"+value.estado+"</td>"+
@@ -315,6 +328,19 @@ $('#titularidad tbody').append("<tr>"+
    		}else{
    			var placa="--------";
    		}
+
+   		if(value.tipoDocumento!=undefined){
+   		var tipoDocumento = value.tipoDocumento;
+   		}else{
+   			var tipoDocumento="--------";
+   		}
+
+   		if(value.numeroDocumento!=undefined){
+   		var numeroDocumento = value.numeroDocumento;
+   		}else{
+   			var numeroDocumento="--------";
+   		}
+
 $('#titularidad tbody').append("<tr>"+
 					"<th class='text-center scope'>"+cont+"</th>"+
 					"<td class='text-center' >"+value.registro+"</td>"+
@@ -322,8 +348,8 @@ $('#titularidad tbody').append("<tr>"+
 					"<td class='text-center' >"+value.apPaterno+"</td>"+
 					"<td class='text-center' >"+value.apMaterno+"</td>"+
 					"<td class='text-center' >"+value.nombre+"</td>"+
-					"<td class='text-center' >"+value.tipoDocumento+"</td>"+
-					"<td class='text-center' >"+value.numeroDocumento+"</td>"+
+					"<td class='text-center' >"+tipoDocumento+"</td>"+
+					"<td class='text-center' >"+numeroDocumento+"</td>"+
 					"<td class='text-center' >"+value.numeroPartida+"</td>"+
 					"<td class='text-center' >"+placa+"</td>"+
 					"<td class='text-center' >"+value.estado+"</td>"+
@@ -578,7 +604,6 @@ $('#asientos-master tbody').append("<tr>"+
 				}
 
 				if(value.cantidadasientos>1){
-					$('#btn_descargas').append('<button type="button" class="btn btn-primary" onclick="descargar_all_asientos('+value.cantidadasientos+')">Descargar todos los Asientos</button>');
 					$('#asientos-tabla').append("<table class='table table-bordered table-condensed table-hover table-sm' id='asientos'>"+
 						"<thead><tr><th>Lista de asientos</th><th>Imagen</th></tr></thead><tbody>");
 				  for(var i=1;i<=value.cantidadasientos;i++){

@@ -1,4 +1,9 @@
-<?php include_once '../assets/nav-lateral.php'; ?>
+<?php include_once '../assets/nav-lateral.php'; 
+include_once '../../modelo/sunarp_model.php';
+$o = new sunarp_model();
+$oficinas = $o->listarOficinas();
+?>
+
 <style>
   #detallepip tr th{
     background-color: #343A40;
@@ -12,12 +17,20 @@
 <div class="content-wrapper">
   <div class="container-fluid">
    <!-- Breadcrumbs-->
-    <ol class="breadcrumb">
+    
+    <div class="row">
+      <div class="col-sm-8">
+        <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <a href="#"><b>SUNARP</b></a>
       </li>
       <li class="breadcrumb-item active"><b>CONSULTAR RPV</b></li>
     </ol>
+      </div>
+      <div class="col-sm-4">
+        <?php include 'horario_atencion.php' ?>
+      </div>
+    </div>
     <hr>
     <form action="" class="form-horizontal">
       <div class="form-group row" style="margin-top: 10px;">
@@ -27,65 +40,15 @@
         <div class="col-sm-2">
           <select name="" id="oficina" class="form-control">
             <option value="">-Seleccionar-</option>
-            <option data-zona='01' value="01">LIMA</option>
-            <option data-zona='01' value="02">CALLAO</option>
-            <option data-zona='01' value="03">HUARAL</option>
-            <option data-zona='01' value="04">HUACHO</option>
-            <option data-zona='01' value="05">CAÑETE</option>
-            <option data-zona='01' value="06">BARRANCA</option>
-            <option data-zona='02' value="01">HUANCAYO</option>
-            <option data-zona='02' value="02">HUANUCO</option>
-            <option data-zona='02' value="04">PASCO</option>
-            <option data-zona='02' value="05">SATIPO</option>
-            <option data-zona='02' value="06">LA MERCED</option>
-            <option data-zona='02' value="07">TARMA</option>
-            <option data-zona='02' value="08">TINGO MARIA</option>
-            <option data-zona='02' value="09">HUANCAVELICA</option>
-            <option data-zona='03' value="01">AREQUIPA</option>
-            <option data-zona='03' value="02">CAMANA</option>
-            <option data-zona='03' value="03">CASTILLA - APLAO</option>
-            <option data-zona='03' value="04">ISLAY - MOLLENDO</option>
-            <option data-zona='04' value="01">HUARAZ</option>
-            <option data-zona='04' value="02">CASMA</option>
-            <option data-zona='04' value="03">CHIMBOTE</option>
-            <option data-zona='05' value="01">PIURA</option>
-            <option data-zona='05' value="02">SULLANA</option>
-            <option data-zona='05' value="03">TUMBES</option>
-            <option data-zona='06' value="01">CUSCO</option>
-            <option data-zona='06' value="02">ABANCAY</option>
-            <option data-zona='06' value="03">MADRE DE DIOS</option>
-            <option data-zona='06' value="04">QUILLABAMBA</option>
-            <option data-zona='06' value="05">SICUANI</option>
-            <option data-zona='06' value="06">ESPINAR</option>
-            <option data-zona='06' value="07">ANDAHUAYLAS</option>
-            <option data-zona='07' value="01">TACNA</option>
-            <option data-zona='07' value="02">ILO</option>
-            <option data-zona='07' value="03">JULIACA</option>
-            <option data-zona='07' value="04">MOQUEGUA</option>
-            <option data-zona='07' value="05">PUNO</option>
-            <option data-zona='08' value="01">TRUJILLO</option>
-            <option data-zona='08' value="02">CHEPEN</option>
-            <option data-zona='08' value="03">HUAMACHUCO</option>
-            <option data-zona='08' value="04">OTUZCO</option>
-            <option data-zona='08' value="05">SAN PEDRO</option>
-            <option data-zona='09' value="01">MAYNAS</option>
-            <option data-zona='10' value="01">ICA</option>
-            <option data-zona='10' value="02">CHINCHA</option>
-            <option data-zona='10' value="03">PISCO</option>
-            <option data-zona='10' value="04">NAZCA</option>
-            <option data-zona='11' value="01">CHICLAYO</option>
-            <option data-zona='11' value="02">CAJAMARCA</option>
-            <option data-zona='11' value="03">JAEN</option>
-            <option data-zona='11' value="04">BAGUA</option>
-            <option data-zona='11' value="05">CHACHAPOYAS</option>
-            <option data-zona='11' value="06">CHOTA</option>
-            <option data-zona='12' value="01">MOYOBAMBA</option>
-            <option data-zona='12' value="02">TARAPOTO</option>
-            <option data-zona='12' value="03">JUANJUI</option>
-            <option data-zona='12' value="04">YURIMAGUAS</option>
-            <option data-zona='13' value="01">PUCALLPA</option>
-            <option data-zona='14' value="01">AYACUCHO</option>
-            <option data-zona='14' value="02">HUANTA</option>
+            <?php  
+
+              unset($oficinas[0]);
+            foreach($oficinas as $key=>$oficinas):
+               
+             ?>
+              <option data-zona="<?php echo $oficinas['codZona'] ?>" value="<?php echo $oficinas['codOficina'] ?>"><?php  echo $oficinas['descripcion'] ?></option>
+           
+            <?php  endforeach; ?>
           </select>
         </div>
         <div class="col-sm-2">

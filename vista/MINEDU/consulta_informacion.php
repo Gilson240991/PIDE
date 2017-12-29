@@ -14,7 +14,7 @@
 			<li class="breadcrumb-item">
 				<a href=""><b>MINEDU</b></a>
 			</li>
-			<li class="breadcrumb-item active"><b><?php echo strtoupper("CONSULTA DE GRADOS Y TÍTULOS DE EGRESADOS DE INSITTUTOS TECNOLOGÍCOS Y PEDAGÓGICOS"); ?></b></li>
+			<li class="breadcrumb-item active"><b><?php echo strtoupper("CONSULTA DE GRADOS Y TÍTULOS DE EGRESADOS DE INSTITUTOS TECNOLÓGICOS Y PEDAGÓGICOS"); ?></b></li>
 		</ol>
 		<hr>
 		<form action="" class="form-horizontal">

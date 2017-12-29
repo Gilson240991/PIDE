@@ -1,7 +1,19 @@
 <?php 	
-include 'modelo/sunarp_model.php';
+$ws  = "http://ws.reniec.gob.pe:80/SRELService/SRELServiceService?wsdl";
+			$client = new SoapClient($ws);
+	
+	$data['usuario']="MULIMWS";
+	$data['codigo']="Mzc3NDk2MDY=";
+			
+			$result = $client->getSession($data);
 
-$sunarp = new sunarp_model();
+			$buscar['sesion']=$result->return;
+			$buscar['usuario']="MULIMWS";
+			$buscar['apPaterno']="AGUILAR";
+			$buscar['apMaterno']="CARBAJAL";
+			$buscar['nombres']="GILSON JAIR";
+
+			$result2 = $client->getRegIdentAproximacion($buscar);
 ?>
 
-<?php echo '<img  style ="width:100%;" src="data:image/jpeg;base64,'.base64_encode( $sunarp->verasiento('27040','8058883','FOLIO','24','2','1')).'"/>';
+<pre><?php print_r($client->__getFunctions()); ?></pre>
